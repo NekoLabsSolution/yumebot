@@ -6,10 +6,10 @@
   // Botão flutuante
   const button = document.createElement('button')
   button.setAttribute('aria-label', 'Abrir YumeBot')
-  button.innerHTML = '🌙'
+  button.innerHTML = '✨'
   button.style.cssText = [
     'position:fixed',
-    'bottom:24px',
+    'bottom:84px',
     'right:24px',
     'width:56px',
     'height:56px',
@@ -33,7 +33,7 @@
   iframe.title = 'YumeBot'
   iframe.style.cssText = [
     'position:fixed',
-    'bottom:96px',
+    'bottom:156px',
     'right:24px',
     `width:${WIDGET_WIDTH}px`,
     `height:${WIDGET_HEIGHT}px`,

@@ -38,12 +38,13 @@
     `width:${WIDGET_WIDTH}px`,
     `height:${WIDGET_HEIGHT}px`,
     'border:none',
-    'border-radius:16px',
-    'box-shadow:0 8px 40px rgba(0,0,0,0.18)',
+    'border-radius:22px',
+    'box-shadow:0 12px 50px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,210,255,0.15)',
     'z-index:99998',
     'display:none',
     'opacity:0',
-    'transition:opacity 0.2s',
+    'transition:opacity 0.25s, transform 0.25s',
+    'transform:translateY(8px)',
   ].join(';')
 
   let open = false
@@ -52,12 +53,16 @@
     open = !open
     if (open) {
       iframe.style.display = 'block'
-      setTimeout(function () { iframe.style.opacity = '1' }, 10)
+      setTimeout(function () {
+        iframe.style.opacity = '1'
+        iframe.style.transform = 'translateY(0px)'
+      }, 10)
       button.innerHTML = '✕'
       button.style.transform = 'rotate(90deg)'
     } else {
       iframe.style.opacity = '0'
-      setTimeout(function () { iframe.style.display = 'none' }, 200)
+      iframe.style.transform = 'translateY(8px)'
+      setTimeout(function () { iframe.style.display = 'none' }, 250)
       button.innerHTML = '🌙'
       button.style.transform = 'rotate(0deg)'
     }

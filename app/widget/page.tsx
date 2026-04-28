@@ -2,7 +2,7 @@ import ChatWidget from '@/components/ChatWidget'
 
 export default function WidgetPage() {
   return (
-    <main className="h-screen w-full overflow-hidden">
+    <main style={{ height: '100vh', width: '100%', overflow: 'hidden' }}>
       <ChatWidget />
     </main>
   )

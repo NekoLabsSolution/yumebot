@@ -202,7 +202,7 @@ function YumeBotWidget() {
                   iframe.style.opacity = '0';
                   iframe.style.transform = 'translateY(8px)';
                   setTimeout(function() { iframe.style.display = 'none'; }, 250);
-                  button.innerHTML = '🌙';
+                  button.innerHTML = '✨';
                   button.style.transform = 'rotate(0deg)';
                 }
               });

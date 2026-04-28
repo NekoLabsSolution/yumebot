@@ -96,7 +96,7 @@ export default function ChatWidget() {
               background: 'linear-gradient(180deg, rgba(255,255,255,0.2) 0%, transparent 100%)',
               borderRadius: '50% 50% 0 0', pointerEvents: 'none',
             }} />
-            🌙
+            ✨
           </div>
 
           <div style={{ flex: 1, minWidth: 0 }}>
@@ -158,7 +158,7 @@ export default function ChatWidget() {
                   background: 'linear-gradient(180deg, rgba(255,255,255,0.18) 0%, transparent 100%)',
                   borderRadius: '50%', pointerEvents: 'none',
                 }} />
-                🌙
+                ✨
               </div>
               <div style={{ color: 'rgba(180,230,255,0.85)', fontWeight: 600, fontSize: '14px' }}>
                 Olá! Sou o YumeBot.

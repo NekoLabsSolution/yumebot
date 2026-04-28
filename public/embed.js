@@ -1,5 +1,5 @@
 ;(function () {
-  const WIDGET_URL = 'https://yumebot.vercel.app/widget'
+  const WIDGET_URL = 'https://yumebot-flax.vercel.app/widget'
   const WIDGET_WIDTH = 380
   const WIDGET_HEIGHT = 580
 

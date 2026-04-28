@@ -3,6 +3,24 @@
 import { useChat } from '@ai-sdk/react'
 import { useRef, useEffect } from 'react'
 
+function renderMarkdown(text: string) {
+  const lines = text.split('\n')
+  return lines.map((line, i) => {
+    // Split by bold (**text**) and italic (*text*) and inline code (`text`)
+    const parts = line.split(/(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)/g)
+    const rendered = parts.map((part, j) => {
+      if (part.startsWith('**') && part.endsWith('**'))
+        return <strong key={j}>{part.slice(2, -2)}</strong>
+      if (part.startsWith('*') && part.endsWith('*'))
+        return <em key={j}>{part.slice(1, -1)}</em>
+      if (part.startsWith('`') && part.endsWith('`'))
+        return <code key={j} style={{ background: 'rgba(0,200,255,0.12)', borderRadius: '4px', padding: '1px 5px', fontSize: '12px', fontFamily: 'monospace' }}>{part.slice(1, -1)}</code>
+      return part
+    })
+    return <span key={i}>{rendered}{i < lines.length - 1 && <br />}</span>
+  })
+}
+
 export default function ChatWidget() {
   const { messages, input, handleInputChange, handleSubmit, isLoading, error } = useChat({
     api: '/api/chat',
@@ -199,7 +217,7 @@ export default function ChatWidget() {
                     pointerEvents: 'none',
                   }} />
                 )}
-                {m.content}
+                {m.role === 'assistant' ? renderMarkdown(m.content) : m.content}
               </div>
             </div>
           ))}
